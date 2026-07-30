@@ -1,0 +1,35 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60);margin-bottom:var(--wp--preset--spacing--40)"><!-- wp:post-terms {"term":"tf_project_type","fontSize":"xs"} /-->
+
+<!-- wp:post-title {"level":1} /-->
+
+<!-- wp:paragraph {"className":"is-style-spec","metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"tf_project_location"}}}},"fontSize":"xs"} -->
+<p class="is-style-spec has-xs-font-size">项目地点</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:post-featured-image {"align":"wide","aspectRatio":"16/9","style":{"border":{"radius":"8px"},"spacing":{"margin":{"bottom":"var:preset|spacing|50"}}}} /-->
+
+<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+
+<!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60)"><!-- wp:heading {"level":2,"fontSize":"xl"} -->
+<h2 class="wp-block-heading has-xl-font-size">相关案例</h2>
+<!-- /wp:heading -->
+
+<!-- wp:query {"queryId":1,"query":{"perPage":3,"pages":1,"offset":0,"postType":"tf_project","order":"desc","orderBy":"date","exclude":[],"inherit":false},"layout":{"type":"default"}} -->
+<div class="wp-block-query"><!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"3/2"} /-->
+
+<!-- wp:post-title {"level":3,"isLink":true,"fontSize":"md"} /-->
+<!-- /wp:post-template --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"cta"} /-->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

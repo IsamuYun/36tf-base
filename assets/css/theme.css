@@ -1,0 +1,244 @@
+/*
+ * 36TF Base — 补充样式
+ *
+ * 规则：只写 theme.json 表达不了的东西。
+ * 具体来说就是四类：伪元素、:focus-visible、区块样式变体（is-style-*）、少量组件级细节。
+ * 颜色和间距一律用 theme.json 生成的 CSS 变量，不要写死数值 —— 换样式变体时才会自动跟着变。
+ */
+
+/* ---------- 无障碍基线 ---------- */
+
+:where(a, button, summary, input, select, textarea, .wp-block-button__link):focus-visible {
+	outline: 2px solid var(--wp--preset--color--accent);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+.skip-link:focus {
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	left: var(--wp--preset--spacing--30);
+	padding: 0.75rem 1rem;
+	top: var(--wp--preset--spacing--30);
+	z-index: 100000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+/* ---------- 页头 ---------- */
+
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+.site-header .wp-block-navigation-item__content {
+	padding-block: 0.35em;
+	position: relative;
+}
+
+.site-header .wp-block-navigation-item__content::after {
+	background: var(--wp--preset--color--primary);
+	bottom: 0;
+	content: "";
+	height: 2px;
+	left: 0;
+	right: 0;
+	position: absolute;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.18s ease;
+}
+
+.site-header .wp-block-navigation-item__content:hover::after,
+.site-header .current-menu-item > .wp-block-navigation-item__content::after {
+	transform: scaleX(1);
+}
+
+/* 移动端把页头 CTA 收起来，导航遮罩层里已经有联系入口 */
+@media (max-width: 599px) {
+	.site-header__cta {
+		display: none;
+	}
+}
+
+/* ---------- 区块样式变体 ---------- */
+
+/* 卡片 */
+.wp-block-group.is-style-card {
+	background: var(--wp--preset--color--base);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 8px;
+	overflow: hidden;
+	padding: var(--wp--preset--spacing--40);
+	transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.wp-block-group.is-style-card:hover {
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: var(--wp--preset--shadow--card);
+}
+
+/* 卡片里的图片顶到边 */
+.wp-block-group.is-style-card > .wp-block-post-featured-image:first-child {
+	margin: calc(var(--wp--preset--spacing--40) * -1) calc(var(--wp--preset--spacing--40) * -1) 0;
+}
+
+/* 描边框（不带 hover，用于表单、资料条目） */
+.wp-block-group.is-style-bordered {
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 8px;
+	padding: var(--wp--preset--spacing--40);
+}
+
+/* 标签行：等宽大写小字，用于 eyebrow */
+.is-style-eyebrow {
+	color: var(--wp--preset--color--contrast-2);
+	font-family: var(--wp--preset--font-family--mono);
+	font-weight: 500;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+/* 导语 */
+.is-style-lead {
+	font-size: var(--wp--preset--font-size--lg);
+	line-height: 1.55;
+	max-width: 46ch;
+}
+
+/* 规格戳：本主题的签名元素。等宽 + 大写 + 上方细线，
+   在防火材料语境下放检测等级，在服务型公司语境下放年限/资质。 */
+.is-style-spec {
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: var(--wp--preset--font-size--lg);
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	line-height: 1.2;
+}
+
+/* 首屏规格条：每格之间一条发丝线 */
+.spec-bar {
+	border-top: 1px solid var(--wp--preset--color--line);
+	padding-top: var(--wp--preset--spacing--30);
+}
+
+@media (min-width: 782px) {
+	.spec-bar > .wp-block-group + .wp-block-group {
+		border-left: 1px solid var(--wp--preset--color--line);
+		padding-left: var(--wp--preset--spacing--30);
+	}
+}
+
+/* 勾选清单 */
+.wp-block-list.is-style-checks {
+	list-style: none;
+	padding-left: 0;
+}
+
+.wp-block-list.is-style-checks li {
+	padding-left: 1.75em;
+	position: relative;
+}
+
+.wp-block-list.is-style-checks li::before {
+	border-bottom: 2px solid var(--wp--preset--color--primary);
+	border-left: 2px solid var(--wp--preset--color--primary);
+	content: "";
+	height: 0.35em;
+	left: 0.15em;
+	position: absolute;
+	top: 0.45em;
+	transform: rotate(-45deg);
+	width: 0.7em;
+}
+
+/* 带框图片 */
+.wp-block-image.is-style-framed img {
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 8px;
+}
+
+/* ---------- 组件细节 ---------- */
+
+/* FAQ 折叠 */
+.wp-block-details summary {
+	cursor: pointer;
+	font-family: var(--wp--preset--font-family--display);
+	font-size: var(--wp--preset--font-size--lg);
+	font-weight: 600;
+	list-style: none;
+	padding-right: 2rem;
+	position: relative;
+}
+
+.wp-block-details summary::-webkit-details-marker {
+	display: none;
+}
+
+.wp-block-details summary::after {
+	content: "+";
+	color: var(--wp--preset--color--primary);
+	font-family: var(--wp--preset--font-family--mono);
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.wp-block-details[open] summary::after {
+	content: "–";
+}
+
+/* 归档页分类筛选行 */
+.term-filter p {
+	margin: 0;
+}
+
+.term-filter a {
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 999px;
+	padding: 0.35em 0.9em;
+	text-decoration: none;
+}
+
+.term-filter a:hover {
+	border-color: var(--wp--preset--color--primary);
+}
+
+/* 选型引导：每一步之间留出呼吸 */
+.finder__step {
+	padding-block: var(--wp--preset--spacing--30);
+}
+
+/* 分类标签（post-terms）统一成等宽小字 */
+.wp-block-post-terms a {
+	color: var(--wp--preset--color--contrast-2);
+	font-family: var(--wp--preset--font-family--mono);
+	letter-spacing: 0.08em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.wp-block-post-terms a:hover {
+	color: var(--wp--preset--color--primary);
+}
+
+/* 页脚里的导航去掉下划线抖动 */
+.site-footer .wp-block-navigation-item__content {
+	text-decoration: none;
+}
+
+.site-footer .wp-block-navigation-item__content:hover {
+	text-decoration: underline;
+}

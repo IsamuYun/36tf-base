@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+*.log
+
+# 字体 woff2 随主题一起进仓库，保证 GitHub 下载即用（见 assets/fonts/、theme.json fontFace）。
+# 仅忽略原始未压缩体（如需保留 ttf/otf 源文件本地转 woff2）。
+assets/fonts/*.ttf
+assets/fonts/*.otf

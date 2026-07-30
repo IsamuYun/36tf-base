@@ -1,0 +1,87 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Fire Blocker Material",
+	"description": "工业防火材料品牌配色：石膏白 / 炭黑 / 认证红 / 警示琥珀。字体走技术规格书语汇（Archivo + IBM Plex）。",
+	"settings": {
+		"color": {
+			"palette": [
+				{ "slug": "base", "color": "#FFFFFF", "name": "Base" },
+				{ "slug": "surface", "color": "#F1EFEC", "name": "Mineral" },
+				{ "slug": "contrast", "color": "#16181A", "name": "Char" },
+				{ "slug": "contrast-2", "color": "#5C6166", "name": "Ash" },
+				{ "slug": "primary", "color": "#B3231F", "name": "Signal red" },
+				{ "slug": "primary-2", "color": "#7E1614", "name": "Signal deep" },
+				{ "slug": "accent", "color": "#C9821B", "name": "Caution amber" },
+				{ "slug": "line", "color": "#DDD8D2", "name": "Line" }
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"slug": "display",
+					"name": "Display",
+					"fontFamily": "Archivo, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Archivo",
+							"fontWeight": "100 900",
+							"fontStyle": "normal",
+							"fontDisplay": "swap",
+							"src": [ "file:./assets/fonts/archivo.woff2" ]
+						}
+					]
+				},
+				{
+					"slug": "body",
+					"name": "Body",
+					"fontFamily": "'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "IBM Plex Sans",
+							"fontWeight": "100 700",
+							"fontStyle": "normal",
+							"fontDisplay": "swap",
+							"src": [ "file:./assets/fonts/ibm-plex-sans.woff2" ]
+						}
+					]
+				},
+				{
+					"slug": "mono",
+					"name": "Mono",
+					"fontFamily": "'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace",
+					"fontFace": [
+						{
+							"fontFamily": "IBM Plex Mono",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontDisplay": "swap",
+							"src": [ "file:./assets/fonts/ibm-plex-mono.woff2" ]
+						}
+					]
+				}
+			]
+		}
+	},
+	"styles": {
+		"typography": { "letterSpacing": "0" },
+		"elements": {
+			"heading": { "typography": { "fontWeight": "700", "letterSpacing": "-0.015em" } },
+			"h6": {
+				"typography": { "fontWeight": "600", "letterSpacing": "0.16em" },
+				"color": { "text": "var:preset|color|primary" }
+			},
+			"button": {
+				"border": { "radius": "2px" },
+				"typography": { "textTransform": "uppercase", "letterSpacing": "0.06em", "fontSize": "var:preset|font-size|xs" }
+			}
+		},
+		"blocks": {
+			"core/quote": {
+				"typography": { "fontFamily": "var:preset|font-family|mono", "fontSize": "var:preset|font-size|md" },
+				"border": { "left": { "color": "var:preset|color|primary", "width": "3px", "style": "solid" } }
+			},
+			"core/code": { "border": { "radius": "2px" } }
+		}
+	}
+}

@@ -1,0 +1,21 @@
+/*
+Theme Name: 36TF Base
+Theme URI: https://36techfreedom.com/
+Author: 36 Tech Freedom LLC
+Author URI: https://36techfreedom.com/
+Description: 面向中小企业官网的极简 block theme 基础骨架。设计令牌全部在 theme.json，换品牌只需切换 styles/ 下的样式变体。内置 Gallery(project) / Resources(resource) 两个自定义内容类型，兼容 WooCommerce。
+Requires at least: 6.7
+Tested up to: 7.0
+Requires PHP: 7.4
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: 36tf-base
+Tags: business, block-theme, full-site-editing, e-commerce, accessibility-ready, translation-ready
+*/
+
+/*
+ * 这里不要写样式。
+ * 能进 theme.json 的一律进 theme.json；
+ * theme.json 表达不了的（伪元素、hover 细节、无障碍焦点环）写在 assets/css/theme.css。
+ */

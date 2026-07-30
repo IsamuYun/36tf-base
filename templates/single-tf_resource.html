@@ -1,0 +1,21 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group"><!-- wp:group {"style":{"spacing":{"margin":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|20"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60);margin-bottom:var(--wp--preset--spacing--40)"><!-- wp:post-terms {"term":"tf_resource_type","fontSize":"xs"} /-->
+
+<!-- wp:post-title {"level":1} /-->
+
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button {"metadata":{"bindings":{"url":{"source":"core/post-meta","args":{"key":"tf_resource_file"}}}}} -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#">下载文件</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:group -->
+
+<!-- wp:post-content {"layout":{"type":"constrained"}} /--></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"cta"} /-->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
