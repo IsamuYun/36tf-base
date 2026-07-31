@@ -2,10 +2,9 @@
 /**
  * Title: 首屏 · 规格条 Hero
  * Slug: 36tf-base/hero-home
- * Categories: tf36-hero
- * Block Types: core/post-content
- * Post Types: page
+ * Categories: banner, featured
  * Template Types: front-page
+ * Viewport Width: 1920  
  * Description: 左侧主张 + 右侧图，下方一条「规格戳」横条。规格条是全站的签名元素，在防火材料语境下放检测等级，在服务型公司语境下放资质/年限。
  *
  * @package TF36Base
