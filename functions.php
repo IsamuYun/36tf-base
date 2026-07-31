@@ -31,6 +31,8 @@ add_action( 'after_setup_theme', function() {
 add_action( 'wp_enqueue_scripts', function () {
     // 只在页面确实用到该 pattern 时加载
     //if ( ! has_block( 'core/group' ) ) { return; }
+	// 只在首页加载
+	if ( !is_front_page() ) { return; }
     wp_enqueue_style( 'tf-carousel', get_theme_file_uri( 'assets/css/carousel.css' ), [], '1.0.0' );
     wp_enqueue_script( 'tf-carousel', get_theme_file_uri( 'assets/js/carousel.js' ), [], '1.0.0', true );
 } );
