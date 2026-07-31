@@ -1,13 +1,13 @@
 <?php
 /**
  * Title: 整页 · Help Me Choose（选型引导 · 静态版）
- * Slug: 36tf-base/page-help-me-choose
- * Categories: tf36-page
+ * Slug: tf-base/page-help-me-choose
+ * Categories: tf-page
  * Block Types: core/post-content
  * Post Types: page
  * Description: 无 JS 的三步选型漏斗。每个选项直接链接到已带筛选参数的商品归档页，SEO 友好、零依赖。跑通转化数据后再考虑升级成 Interactivity API 交互版。
  *
- * @package TF36Base
+ * @package TFBase
  */
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->

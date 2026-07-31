@@ -1,12 +1,12 @@
 <?php
 /**
  * Title: 内容区 · 最新资源两栏
- * Slug: 36tf-base/section-resources-latest
- * Categories: tf36-section
+ * Slug: tf-base/section-resources-latest
+ * Categories: tf-section
  * Block Types: core/post-content
  * Description: 从 Resources(tf_resource) 拉最新 4 条。
  *
- * @package TF36Base
+ * @package TFBase
  */
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"backgroundColor":"surface","layout":{"type":"constrained"}} -->

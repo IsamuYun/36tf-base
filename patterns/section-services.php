@@ -1,12 +1,12 @@
 <?php
 /**
  * Title: 内容区 · 服务/能力三栏
- * Slug: 36tf-base/section-services
- * Categories: tf36-section
+ * Slug: tf-base/section-services
+ * Categories: tf-section
  * Block Types: core/post-content
  * Description: 三栏卡片，用于 Services 页或首页的能力概览。
  *
- * @package TF36Base
+ * @package TFBase
  */
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"backgroundColor":"surface","layout":{"type":"constrained"}} -->

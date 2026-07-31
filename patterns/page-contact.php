@@ -1,13 +1,13 @@
 <?php
 /**
  * Title: 整页 · Contact Us
- * Slug: 36tf-base/page-contact
- * Categories: tf36-page
+ * Slug: tf-base/page-contact
+ * Categories: tf-page
  * Block Types: core/post-content
  * Post Types: page
  * Description: 左侧联系信息 + 右侧表单占位。把表单插件（Fluent Forms / WPForms）的区块拖进右栏即可。
  *
- * @package TF36Base
+ * @package TFBase
  */
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->

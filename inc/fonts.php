@@ -12,7 +12,7 @@
  *
  * 本文件只保留 theme.json 表达不了的一件事：给正文字体加 preload，改善 LCP。
  *
- * @package TF36Base
+ * @package TFBase
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,16 +24,16 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * 仍保留文件存在性判断：万一交付时删掉了字体二进制，也不会输出一个 404 的 preload。
  */
-function tf36_preload_body_font() {
+function tf_preload_body_font() {
 	$file = 'assets/fonts/manrope.woff2';
 
-	if ( ! file_exists( TF36_DIR . '/' . $file ) ) {
+	if ( ! file_exists( TF_DIR . '/' . $file ) ) {
 		return;
 	}
 
 	printf(
 		'<link rel="preload" href="%s" as="font" type="font/woff2" crossorigin>' . "\n",
-		esc_url( TF36_URI . '/' . $file )
+		esc_url( TF_URI . '/' . $file )
 	);
 }
-add_action( 'wp_head', 'tf36_preload_body_font', 2 );
+add_action( 'wp_head', 'tf_preload_body_font', 2 );

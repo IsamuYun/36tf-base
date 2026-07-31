@@ -2,7 +2,7 @@
 /**
  * 主题支持与资源加载。
  *
- * @package TF36Base
+ * @package TFBase
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * 主题支持声明。block theme 大部分能力默认开启，这里只补必须显式声明的。
  */
-function tf36_setup() {
+function tf_setup() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'responsive-embeds' );
@@ -22,41 +22,41 @@ function tf36_setup() {
 	// 编辑器里也加载 theme.css，保证所见即所得。
 	add_editor_style( 'assets/css/theme.css' );
 
-	load_theme_textdomain( '36tf-base', TF36_DIR . '/languages' );
+	load_theme_textdomain( 'tf-base', TF_DIR . '/languages' );
 
 	// Gallery 卡片用的 3:2 裁切尺寸。
-	add_image_size( 'tf36-card', 720, 480, true );
+	add_image_size( 'tf-card', 720, 480, true );
 }
-add_action( 'after_setup_theme', 'tf36_setup' );
+add_action( 'after_setup_theme', 'tf_setup' );
 
 /**
  * 前端样式。只有一个文件，不依赖任何 CSS 框架。
  */
-function tf36_enqueue_assets() {
-	$path = TF36_DIR . '/assets/css/theme.css';
+function tf_enqueue_assets() {
+	$path = TF_DIR . '/assets/css/theme.css';
 
 	wp_enqueue_style(
-		'tf36-theme',
-		TF36_URI . '/assets/css/theme.css',
+		'tf-theme',
+		TF_URI . '/assets/css/theme.css',
 		array(),
-		file_exists( $path ) ? (string) filemtime( $path ) : TF36_VERSION
+		file_exists( $path ) ? (string) filemtime( $path ) : TF_VERSION
 	);
 }
-add_action( 'wp_enqueue_scripts', 'tf36_enqueue_assets' );
+add_action( 'wp_enqueue_scripts', 'tf_enqueue_assets' );
 
 /**
  * 移除核心 duotone 内联 SVG（theme.json 已关闭 duotone），每页省 1–2KB。
  */
-function tf36_remove_global_styles_svg() {
+function tf_remove_global_styles_svg() {
 	remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
 	remove_action( 'in_admin_header', 'wp_global_styles_render_svg_filters' );
 }
-add_action( 'init', 'tf36_remove_global_styles_svg' );
+add_action( 'init', 'tf_remove_global_styles_svg' );
 
 /**
  * 关掉 emoji 脚本。B2B 官网用不上。
  */
-function tf36_disable_emojis() {
+function tf_disable_emojis() {
 	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 	remove_action( 'wp_print_styles', 'print_emoji_styles' );
 	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -69,4 +69,4 @@ function tf36_disable_emojis() {
 		}
 	);
 }
-add_action( 'init', 'tf36_disable_emojis' );
+add_action( 'init', 'tf_disable_emojis' );

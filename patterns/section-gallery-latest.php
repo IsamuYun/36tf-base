@@ -1,12 +1,12 @@
 <?php
 /**
  * Title: 内容区 · 最新案例三栏
- * Slug: 36tf-base/section-gallery-latest
- * Categories: tf36-section
+ * Slug: tf-base/section-gallery-latest
+ * Categories: tf-section
  * Block Types: core/post-content
  * Description: 从 Gallery(tf_project) 拉最新 3 条，用于首页。
  *
- * @package TF36Base
+ * @package TFBase
  */
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->

@@ -7,7 +7,7 @@
  * - Resources 要按类型（指南 / 白皮书 / 检测报告 / 视频）分组并长期增长 → 同理。
  * 其余 8 个导航项用普通 Page 或 WooCommerce 即可。
  *
- * @package TF36Base
+ * @package TFBase
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,18 +17,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * 注册 CPT 与 taxonomy。
  */
-function tf36_register_post_types() {
+function tf_register_post_types() {
 
 	/* ---------- Gallery / 案例 ---------- */
 	register_post_type(
 		'tf_project',
 		array(
 			'labels'        => array(
-				'name'          => __( 'Gallery', '36tf-base' ),
-				'singular_name' => __( 'Project', '36tf-base' ),
-				'add_new_item'  => __( '新增案例', '36tf-base' ),
-				'edit_item'     => __( '编辑案例', '36tf-base' ),
-				'menu_name'     => __( 'Gallery', '36tf-base' ),
+				'name'          => __( 'Gallery', 'tf-base' ),
+				'singular_name' => __( 'Project', 'tf-base' ),
+				'add_new_item'  => __( '新增案例', 'tf-base' ),
+				'edit_item'     => __( '编辑案例', 'tf-base' ),
+				'menu_name'     => __( 'Gallery', 'tf-base' ),
 			),
 			'public'        => true,
 			'has_archive'   => 'gallery',
@@ -49,8 +49,8 @@ function tf36_register_post_types() {
 		array( 'tf_project' ),
 		array(
 			'labels'            => array(
-				'name'          => __( '案例分类', '36tf-base' ),
-				'singular_name' => __( '案例分类', '36tf-base' ),
+				'name'          => __( '案例分类', 'tf-base' ),
+				'singular_name' => __( '案例分类', 'tf-base' ),
 			),
 			'public'            => true,
 			'hierarchical'      => true,
@@ -65,11 +65,11 @@ function tf36_register_post_types() {
 		'tf_resource',
 		array(
 			'labels'        => array(
-				'name'          => __( 'Resources', '36tf-base' ),
-				'singular_name' => __( 'Resource', '36tf-base' ),
-				'add_new_item'  => __( '新增资源', '36tf-base' ),
-				'edit_item'     => __( '编辑资源', '36tf-base' ),
-				'menu_name'     => __( 'Resources', '36tf-base' ),
+				'name'          => __( 'Resources', 'tf-base' ),
+				'singular_name' => __( 'Resource', 'tf-base' ),
+				'add_new_item'  => __( '新增资源', 'tf-base' ),
+				'edit_item'     => __( '编辑资源', 'tf-base' ),
+				'menu_name'     => __( 'Resources', 'tf-base' ),
 			),
 			'public'        => true,
 			'has_archive'   => 'resources',
@@ -86,8 +86,8 @@ function tf36_register_post_types() {
 		array( 'tf_resource' ),
 		array(
 			'labels'            => array(
-				'name'          => __( '资源类型', '36tf-base' ),
-				'singular_name' => __( '资源类型', '36tf-base' ),
+				'name'          => __( '资源类型', 'tf-base' ),
+				'singular_name' => __( '资源类型', 'tf-base' ),
 			),
 			'public'            => true,
 			'hierarchical'      => true,
@@ -97,7 +97,7 @@ function tf36_register_post_types() {
 		)
 	);
 }
-add_action( 'init', 'tf36_register_post_types' );
+add_action( 'init', 'tf_register_post_types' );
 
 /**
  * 注册 post meta。
@@ -106,13 +106,13 @@ add_action( 'init', 'tf36_register_post_types' );
  * 段落 / 按钮 上（无需 ACF）：
  *   <!-- wp:button {"metadata":{"bindings":{"url":{"source":"core/post-meta","args":{"key":"tf_resource_file"}}}}} -->
  */
-function tf36_register_meta() {
+function tf_register_meta() {
 	register_post_meta(
 		'tf_resource',
 		'tf_resource_file',
 		array(
 			'type'              => 'string',
-			'description'       => __( '可下载文件的 URL（PDF / 检测报告等）', '36tf-base' ),
+			'description'       => __( '可下载文件的 URL（PDF / 检测报告等）', 'tf-base' ),
 			'single'            => true,
 			'show_in_rest'      => true,
 			'sanitize_callback' => 'esc_url_raw',
@@ -127,7 +127,7 @@ function tf36_register_meta() {
 		'tf_project_location',
 		array(
 			'type'              => 'string',
-			'description'       => __( '项目地点 / 客户所在地', '36tf-base' ),
+			'description'       => __( '项目地点 / 客户所在地', 'tf-base' ),
 			'single'            => true,
 			'show_in_rest'      => true,
 			'sanitize_callback' => 'sanitize_text_field',
@@ -137,13 +137,13 @@ function tf36_register_meta() {
 		)
 	);
 }
-add_action( 'init', 'tf36_register_meta' );
+add_action( 'init', 'tf_register_meta' );
 
 /**
  * 主题激活时刷新一次固定链接，避免 /gallery/ 和 /resources/ 404。
  */
-function tf36_flush_rewrites() {
-	tf36_register_post_types();
+function tf_flush_rewrites() {
+	tf_register_post_types();
 	flush_rewrite_rules();
 }
-add_action( 'after_switch_theme', 'tf36_flush_rewrites' );
+add_action( 'after_switch_theme', 'tf_flush_rewrites' );

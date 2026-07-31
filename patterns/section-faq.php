@@ -1,13 +1,13 @@
 <?php
 /**
  * Title: 内容区 · FAQ 折叠
- * Slug: 36tf-base/section-faq
- * Categories: tf36-section
+ * Slug: tf-base/section-faq
+ * Categories: tf-section
  * Block Types: core/post-content
  * Post Types: page
  * Description: 用核心 Details 区块做的问答折叠，无需插件。别忘了在 SEO 插件里为本页开启 FAQPage 结构化数据。
  *
- * @package TF36Base
+ * @package TFBase
  */
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"},"blockGap":"0"}},"layout":{"type":"constrained"}} -->
