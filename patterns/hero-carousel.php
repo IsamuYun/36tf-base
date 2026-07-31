@@ -14,15 +14,13 @@
 
     <!-- wp:image {"sizeSlug":"tf-hero-desktop","linkDestination":"none","className":"tf-carousel__slide"} -->
     <figure class="wp-block-image size-tf-hero-desktop tf-carousel__slide">
-      <img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/hero-01.png' ) ); ?>"
-           alt="" fetchpriority="high" decoding="async" />
+      <img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/hero-01.jpg' ) ); ?>" alt="" fetchpriority="high" decoding="async" />
     </figure>
     <!-- /wp:image -->
 
     <!-- wp:image {"sizeSlug":"tf-hero-desktop","linkDestination":"none","className":"tf-carousel__slide"} -->
     <figure class="wp-block-image size-tf-hero-desktop tf-carousel__slide">
-      <img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/hero-02.png' ) ); ?>"
-           alt="" loading="lazy" decoding="async" />
+      <img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/hero-02.jpg' ) ); ?>" alt="" loading="lazy" decoding="async" />
     </figure>
     <!-- /wp:image -->
 
