@@ -1,0 +1,43 @@
+.tf-carousel { position: relative; overflow: hidden; }
+
+.tf-carousel__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.tf-carousel__track::-webkit-scrollbar { display: none; }
+
+.tf-carousel__slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  margin: 0;
+}
+.tf-carousel__slide img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1920 / 650;
+  object-fit: cover;
+}
+
+/* 窄屏改用更高的比例，避免变成一条缝 */
+@media (max-width: 781px) {
+  .tf-carousel__slide img { aspect-ratio: 4 / 3; }
+}
+
+/* 指示点 */
+.tf-carousel__dots {
+  position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 10px; z-index: 2;
+}
+.tf-carousel__dot {
+  width: 10px; height: 10px; padding: 0; border: 0; border-radius: 50%;
+  background: rgba(255,255,255,.5); cursor: pointer;
+  transition: background .2s;
+}
+.tf-carousel__dot[aria-current="true"] { background: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tf-carousel__track { scroll-behavior: auto; }
+}
