@@ -23,10 +23,10 @@
 	<!-- /wp:group --></div>
 	<!-- /wp:group -->
 
-	<!-- wp:group {"align":"full","className":"main-header","backgroundColor":"base","style":{"position":{"type":"sticky","top":"0px"}},"layout":{"type":"constrained"}} -->
-	<div class="wp-block-group alignfull main-header has-base-background-color has-background" style="position:sticky;top:0px"><!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"nowrap"}} -->
-	<div class="wp-block-group alignwide"><!-- wp:image {"width":"128px","height":"128px","sizeSlug":"full","linkDestination":"custom","className":"site-logo-img"} -->
-	<figure class="wp-block-image size-full is-resized site-logo-img"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/site-logo.png' ) ); ?>" alt="Fire Block" width="128" height="128"/></a></figure>
+	<!-- wp:group {"align":"full","className":"main-header","backgroundColor":"base","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignfull main-header has-base-background-color has-background"><!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"nowrap"}} -->
+	<div class="wp-block-group alignwide"><!-- wp:image {"linkDestination":"custom","className":"site-logo-img"} -->
+	<figure class="wp-block-image site-logo-img"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/site-logo.png' ) ); ?>" alt="Fire Block"/></a></figure>
 	<!-- /wp:image -->
 
 	<!-- wp:navigation {"overlayMenu":"mobile","overlayBackgroundColor":"base","overlayTextColor":"contrast","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","justifyContent":"right","flexWrap":"wrap"}} /--></div>
