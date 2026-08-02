@@ -8,8 +8,8 @@
  * @package TFBase
  */
 ?>
-<!-- wp:group {"tagName":"header","className":"site-header","backgroundColor":"base","layout":{"type":"constrained"}} -->
-<header class="wp-block-group site-header has-base-background-color has-background">
+<!-- wp:group {"className":"site-header","backgroundColor":"base","layout":{"type":"constrained"}} -->
+<div class="wp-block-group site-header has-base-background-color has-background">
 
 	<!-- 顶部信息条（随页面滚走） -->
 	<!-- wp:group {"align":"full","className":"top-bar","layout":{"type":"constrained"}} -->
@@ -35,5 +35,5 @@
 	<!-- /wp:group --></div>
 	<!-- /wp:group -->
 
-</header>
+</div>
 <!-- /wp:group -->
