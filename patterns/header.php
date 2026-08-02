@@ -11,7 +11,6 @@
 <!-- wp:group {"className":"site-header","backgroundColor":"base","layout":{"type":"constrained"}} -->
 <div class="wp-block-group site-header has-base-background-color has-background">
 
-	<!-- 顶部信息条（随页面滚走） -->
 	<!-- wp:group {"align":"full","className":"top-bar","layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignfull top-bar"><!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"wrap"}} -->
 	<div class="wp-block-group alignwide"><!-- wp:paragraph {"className":"top-bar__addr"} -->
@@ -24,7 +23,6 @@
 	<!-- /wp:group --></div>
 	<!-- /wp:group -->
 
-	<!-- 主页头：置顶 -->
 	<!-- wp:group {"align":"full","className":"main-header","backgroundColor":"base","style":{"position":{"type":"sticky","top":"0px"}},"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignfull main-header has-base-background-color has-background" style="position:sticky;top:0px"><!-- wp:group {"align":"wide","layout":{"type":"flex","justifyContent":"space-between","flexWrap":"nowrap"}} -->
 	<div class="wp-block-group alignwide"><!-- wp:image {"width":"128px","height":"128px","sizeSlug":"full","linkDestination":"custom","className":"site-logo-img"} -->
