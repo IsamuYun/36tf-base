@@ -19,6 +19,14 @@ function tf_setup() {
 	add_theme_support( 'editor-styles' );
 	add_theme_support( 'html5', array( 'search-form', 'gallery', 'caption', 'style', 'script', 'navigation-widgets' ) );
 
+	// 站点 Logo（wp:site-logo 块用），后台「站点 Logo」上传即可，尺寸由 theme.css 收敛为 128×128。
+	add_theme_support( 'custom-logo', array(
+		'width'       => 128,
+		'height'      => 128,
+		'flex-width'  => true,
+		'flex-height' => true,
+	) );
+
 	// 编辑器里也加载 theme.css，保证所见即所得。
 	add_editor_style( 'assets/css/theme.css' );
 
