@@ -260,6 +260,32 @@
 	color: var(--wp--preset--color--primary);
 }
 
+/* Who We Are：背景照上的毛玻璃卡片 */
+.whoweare-glass {
+	backdrop-filter: blur(16px) saturate(140%);
+	-webkit-backdrop-filter: blur(16px) saturate(140%);
+	background: color-mix(in srgb, var(--wp--preset--color--base) 12%, transparent);
+	border: 1px solid color-mix(in srgb, var(--wp--preset--color--base) 30%, transparent);
+	border-radius: 12px;
+	box-shadow: var(--wp--preset--shadow--raised);
+	margin-inline: 0;
+	max-width: 640px;
+	padding: var(--wp--preset--spacing--50);
+}
+
+/* 浏览器不支持背景模糊时，加大底色不透明度，保证白字仍然读得清 */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+	.whoweare-glass {
+		background: color-mix(in srgb, var(--wp--preset--color--contrast) 55%, transparent);
+	}
+}
+
+@media (max-width: 600px) {
+	.whoweare-glass {
+		padding: var(--wp--preset--spacing--40);
+	}
+}
+
 /* 带框图片 */
 .wp-block-image.is-style-framed img {
 	border: 1px solid var(--wp--preset--color--line);
